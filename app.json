@@ -1,37 +1,14 @@
 {
-  "name": "EFAST",
-  "description": "Efast, your friendly assistant!",
-  "logo": "https://i.ibb.co/nqsRcKDB/Xploader4.jpg",
-  "keywords": [],
-  "repository": "https://github.com/Dark-Xploit/CypherX",
-  "stack": "container",
-  "addons": [
-    {
-      "plan": "heroku-postgresql"
+  "name": "CypherX Bot",
+  "description": "Deploy the CypherX Bot to Heroku",
+  "repository": "https://github.com/YOUR_USERNAME/CypherX",
+  "env": {
+    "GITHUB_USERNAME": {
+      "description": "Enter your GitHub username",
+      "required": true
     }
-  ],
-  "scripts": {
-    "start": "node index.js"
   },
-"env": {
-  "SESSION_ID": {
-    "description": "Must begin with 'XPLOADER-BOT:~' or 'CYPHER-X:~'.",
-    "value": "",
-    "required": false
+  "scripts": {
+    "postdeploy": "bash validate.sh"
   }
-},
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    }
-  ]
 }
